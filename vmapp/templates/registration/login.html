@@ -1,0 +1,23 @@
+{% extends 'vmapp/base.html' %} 
+{% block title %}Login{% endblock %} 
+{% load crispy_forms_tags %}
+{% load crispy_forms_filters %}
+{% block content %}
+<br/><br/>
+<h1><center>LOGIN</center></h1>
+<br/><br/>
+<div class="container h-100">
+<div class="d-flex align-items-center justify-content-center h-100">
+<div class="col-md-4">
+<form method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <p>Don't have an account? Create one <a href="/sign-up">Here</a>!</p>
+  <div class="d-flex align-items-center justify-content-center h-100">
+    <button type="submit" class="btn btn-success">Login</button>
+  </div>
+</div>
+</div>
+</div>
+</form>
+{% endblock %}
